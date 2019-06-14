@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index');
+Route::resource('examinfo','ExaminfoController');
+Route::resource('makequestion' , 'QuestionController');
+Route::resource('student','StudentController');
+Route::resource('answer','AnswerController');
+Route::resource('result' , 'ResultController');

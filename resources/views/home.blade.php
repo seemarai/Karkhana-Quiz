@@ -1,24 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    You are logged in!
+
+  <div class="content coustm">
+                <div class="coustm1">
+                    <div class="title m-b-md">
+                        <!--<b>Online Exam</b>-->
+                    </div>
+
+                    <div class="links">
+                        <a href="{{route('examinfo.create')}}" style="background-color: #ff9f3b;padding: 10px;margin: 10px;color: black;border-radius: 5px;">Create Exam</a>
+                        <a href="{{route('student.index')}}" style="background-color: #ff9f3b;padding: 10px;margin: 10px;color: black;border-radius: 5px;">Give Exam</a>
+                        <a href="{{route('result.index')}}" style="background-color: #ff9f3b;padding: 10px;margin: 10px;color: black;border-radius: 5px;">Result</a>
+                    
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
 @endsection

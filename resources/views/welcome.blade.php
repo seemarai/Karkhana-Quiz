@@ -70,7 +70,7 @@
               display: block; }
 
 
-            .blur{
+            /*.blur{
                 z-index: 9999;
             }
             .coustm{
@@ -84,7 +84,7 @@
             }
             .coustm1{
                 height: 250px;
-                margin-top: 70px;
+                margin-top: 70px;*/
             }
 
             .full-height {
@@ -101,69 +101,153 @@
                 position: relative;
             }
 
-            .top-right {
+            /*.top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
-            }
+            }*/
 
             .content {
                 text-align: center;
             }
 
             .title {
-                font-size: 84px;
+                font-size: 94px;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000000;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 20px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
-                text-transform: uppercase;
-            }
+                font-family: "Work Sans", Arial, sans-serif ;}
 
             .m-b-md {
                 margin-bottom: 30px;}
 
 
-body{
-  margin: 0;
-  padding: 0;
-  font-family: "Work Sans", Arial, sans-serif ;
-  background-color: #f1f1f1;
+
+
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing:border-box;
+  box-sizing: border-box; }
+
+
+
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block; }
+
+
+ul{
+  float: right;
+  list-style-type: none;
+  margin-top: 2px;
 }
-header{
-  background-image: url(/images/wmain.jpg);
+
+ul li{
+  display: inline-block;
+}
+
+ul li a{
+  text-decoration: none;
+  color: #fff;
+  padding: 0px 0px;
+  border: 1px solid transparent;
+  margin-right: 4px
+}
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    padding:10px 10px;
+    box-sizing: border-box;
+    transition: .4s;
+    background-color:#866EC7;
+    overflow: hidden;
+    margin: auto;
+}
+nav ul{
+    list-style: none;
+    float: right;
+    margin:0;
+    padding: 0;
+    margin-right: 0em
+   
+}
+
+nav ul li{
+    list-style: none;
+}
+
+.rectangle{
+  height:inherit; 
+  width: initial;
+  background-color:#82ACFF;
+  border-radius:50px; 
+  display:inline-block;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.main .icon {
+  display: none;
+}
+
+.main ul li a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 4px 8px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.ssheet{
+  background-image: url(../images/tempsnip.png);
   height:80vh;
   background-size: cover;
   background-position: center;
   padding-top: 40px;
+  padding-bottom: 40px;
+
 }
+
 
 </style>
     </head>
     <body>
-        <section>
-        <div class="flex-center position-ref full-height blur">
-            
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                   
-                </div>
 
-            @endif
+ <header>
+        
+          
+        <nav class="main" id="resnav">
+             <ul>
+            <li><a href="/"><font color = "white">Home</font></a></li>
+            <li><a href="#courses"><font color = "white">Courses</font>  
+            </a></li>
+            <li><a href="#about"><font color = "white">About</font></a></li>
+            <li><a href="#register" class="rectangle" ><font color = "white">Register for free</font></a></li>
+                
+      </nav>
+    </header>
 
-        </div>
-    </section>
 
 
 
@@ -213,6 +297,27 @@ header{
     </div>
     </section>
 
+
+
+
+        <section> 
+          <div class="ssheet"> 
+         <h2><font color = "white">You can jump into questions from here... </font></h2>
+         <h3><font color = "white">If you haven't login yet you must register first :) .</font></h3>
+        <div class="flex-center position-ref full-height blur"> 
+            @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else  
+                      <button class="button"><a href="{{ route('register') }}" ><font color = "white">Register</a></button>
+                      <button class="button"><a href="{{ route('login') }}" ><font color = "white">Login</a></button>
+                  @endauth        
+                </div>
+            @endif
+        </div>
+      </div>
+    </section>
 
 
 

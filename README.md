@@ -1,2 +1,0 @@
-# Karkhana-Quiz
-# QuizPlatform
